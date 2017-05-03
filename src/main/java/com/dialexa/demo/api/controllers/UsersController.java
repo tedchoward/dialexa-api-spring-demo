@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -30,6 +31,7 @@ public class UsersController {
 
     @PostMapping
     @ResponseStatus(CREATED)
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public UserDTO createUser(@RequestBody @Valid User user) {
         val savedUser = usersRepository.save(user);
         return new UserDTO(savedUser);
