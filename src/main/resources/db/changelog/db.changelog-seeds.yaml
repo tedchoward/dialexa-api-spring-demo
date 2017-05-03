@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-data
+      author: ted
+      changes:
+        - loadUpdateData:
+            file: db/changelog/seed/01_users.csv
+            quotchar: '"'
+            tableName: users
+            primaryKey: user_id
+        - loadUpdateData:
+            file: db/changelog/seed/02_roles.csv
+            quotchar: '"'
+            tableName: roles
+            primaryKey: role_id
+        - loadUpdateData:
+            file: db/changelog/seed/03_user-roles.csv
+            quotchar: '"'
+            tableName: user_roles
+            primaryKey: user_id,role_id

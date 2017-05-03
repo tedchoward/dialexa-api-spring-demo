@@ -28,4 +28,10 @@ dependencies {
 
     compile('io.springfox:springfox-swagger2:2.6.1')
     compile('io.springfox:springfox-swagger-ui:2.6.1')
+
+    compile('org.springframework.security:spring-security-web')
+    compile('org.springframework.security:spring-security-config')
+
+    compile('de.mkammerer:argon2-jvm:2.2')
+    compile('io.jsonwebtoken:jjwt:0.7.0')
 }
